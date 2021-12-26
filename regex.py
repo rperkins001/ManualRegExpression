@@ -1,18 +1,15 @@
 
-
-lst = ['burger', 'cheeseburger', 'coke', 'cost']
-
 class BruteForceMagicRegex():
 
     def __init__(self):
-        self.dict = {}
+        lst = input('Put in a line in: ').split()
         self.makedict(lst)
         self.comparedict(lst)
         self.setmatch(self.matches)
         self.maxval(self.matchdict)
 
     def makedict(self, l):
-        
+        self.dict = {}
         for i in l:
             listi = list(i)
             self.dict[i] = []
@@ -24,10 +21,9 @@ class BruteForceMagicRegex():
 
     def comparedict(self, l):
         x = 0
-        y = 0
         self.matches = []
         
-        while x < 3:
+        while x < (len(l)-1):
             word1 = l[x]
             word2 = l[x+1]
             key1 = self.dict[word1]
